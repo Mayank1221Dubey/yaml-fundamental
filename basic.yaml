@@ -1,0 +1,93 @@
+team: rcb7
+city: Banglore
+year_founded: 2007
+is_current_champion: flase
+background: >
+  Google Drive is one of the most popular
+  cloud storage services available today. 
+  If you've never used a cloud-based storage 
+  service like Google Drive before, take a 
+  moment to consider the advantages of keeping 
+  your files online.This is long line and 
+  new line is not considered so this is just
+  a big one line.
+# above text is one big line and every line is here is not new line
+organization_history: |
+  vijay malya
+  2007-2024
+
+  virat kohli
+  2007-2019
+  new line is considered
+  and each line is new line
+  this is not a one big line.
+# Each line is indeed treated as a new line when rendered, not as one continuous line.
+#creating list way -1
+famous_players:
+  - virat kholi
+  - glen maxwell
+  - yuzi chahal
+
+#creating list way -2
+famous_players: [AB Diviliers, Devdutt Puddikal, Rajat Patidar]
+
+#creating dictionaries or object
+management_staff:
+  coach: dunkenflatcher
+  bowling_coach: irfan khan
+  batting_coach: vikram rathore
+
+#list of objects
+
+famous_players:
+  - name: varun arun
+    age: 35
+    is_retired: flase
+  - name: dale stane
+    age: 40
+    is_retired: true
+  - name: mich stark
+    age: 35
+    is_retired: flase
+
+
+
+indicaters in yaml 
+"?" indicater - the question mark (?) is used as an indicator to define keys.
+this is optional.
+
+example A -
+user:
+  name: John
+  age: 30
+  is_student?: true
+example B -
+user:
+  name: John
+  age: 30
+  is_student: true
+Note -------------------------- both example A and B are same
+
+'&' indicater - It is used to mark a node for aliasing.
+'*' indicater -  is used as an indicator for creating aliases and 
+references within the document.
+
+example --
+# Define a person with some attributes
+person: &person_details
+  name: John Doe
+  age: 30
+  occupation: Developer
+
+# Reference the person details using an alias
+employee:
+  details: *person_details
+  department: Engineering
+
+The resulting structure would be -
+employee:
+  details:
+    name: John Doe
+    age: 30
+    occupation: Developer
+  department: Engineering
